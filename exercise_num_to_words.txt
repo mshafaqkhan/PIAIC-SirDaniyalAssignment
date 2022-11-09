@@ -1,1 +1,86 @@
-Hello
+let mynum="91109";//input number here
+let numlength=mynum.length;
+function num2word(num)
+{
+    let oneto19=["ZERO","ONE", "TWO", "THREE","FOUR","FIVE","SIX","SEVEN","EIGHT","NINE","TEN",
+    "ELEVEN","TWELVE","THIRTEEN","FOURTEEN","FIFTEEN","SIXTEEN","SEVENTEEN","EIGHTEEN","NINETEEN"];
+    let twentyto99=["", "", "TWENTY", "THIRTY","FORTY","FIFTY","SIXTY","SEVENTY","EIGHTY","NINETY"];
+    if(num>99999)
+    {
+        let numDividor=Math.floor(num/100000);            //Value change 
+        let numRemainder=num%100000;                      //Value change 
+        console.log(oneto19[numDividor]);
+        console.log("LAKH");                        //Value change 
+        if(numRemainder===0)
+        {}
+        else
+        {
+            num2word(numRemainder)
+        }
+
+    }
+    else if(num>9999)
+    {
+        let numDividor=Math.floor(num/10000);            //Value change 
+        let numRemainder=num%10000;                      //Value change 
+        console.log(twentyto99[numDividor]);
+     //   console.log("THOUSAND");                        //Value change 
+        if(numRemainder===0)
+        {}
+        else
+        {
+            num2word(numRemainder)
+        }
+
+    }
+    else if(num>999)
+    {
+        let numDividor=Math.floor(num/1000);            //Value change 
+        let numRemainder=num%1000;                      //Value change 
+        // console.log(numDividor);
+        // console.log(numRemainder);
+        console.log(oneto19[numDividor]);
+        console.log("THOUSAND");                        //Value change 
+        if(numRemainder===0)
+        {}
+        else
+        {
+            num2word(numRemainder)
+        }
+
+    }
+    else if(num>99)
+    {
+        let numDividor=Math.floor(num/100);
+        let numRemainder=num%100;
+        // console.log(numDividor);
+        // console.log(numRemainder);
+        console.log(oneto19[numDividor]);
+        console.log("HUNDRED");
+        if(numRemainder===0)
+        {}
+        else
+        {
+            num2word(numRemainder)
+        }
+
+    }
+    else if(num>19)
+    {
+        let numDividor=Math.floor(num/10);
+        let numRemainder=num%10;
+        console.log(twentyto99[numDividor]);
+        if(numRemainder===0)
+        {}
+        else
+        {
+            num2word(numRemainder)
+        }
+    }
+    else
+    {
+        let tempnum=Number(num);
+        console.log(oneto19[tempnum])
+    }
+}
+num2word(mynum)
